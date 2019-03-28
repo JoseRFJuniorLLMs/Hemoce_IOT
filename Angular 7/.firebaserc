@@ -1,0 +1,6 @@
+{
+  "projects": {
+    "hemoce-iot": "hemoce-iot",
+    "default": "hemoce-iot"
+  }
+}

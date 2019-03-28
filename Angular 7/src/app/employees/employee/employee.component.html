@@ -1,0 +1,57 @@
+<h1 class="display-4">HEMOCE</h1>
+<form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)">
+  <input type="hidden" name="id" #id="ngModel" [(ngModel)]="service.formData.id">
+  <div class="form-group">
+    <input name="fullName" #fullName="ngModel" [(ngModel)]="service.formData.fullName" class="form-control" placeholder="Sensor" required>
+    <div *ngIf="fullName.invalid && fullName.touched" class="validation-error">Campo Obrigatorio.</div>
+  </div>
+<!--   <div class="form-group">
+    <input name="position" #position="ngModel" [(ngModel)]="service.formData.position" class="form-control" placeholder="Temperatura">
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <input name="empCode" #empCode="ngModel" [(ngModel)]="service.formData.empCode" class="form-control" placeholder="Latitude">
+    </div>
+    <div class="form-group  col-md-6">
+      <input name="mobile" #mobile="ngModel" [(ngModel)]="service.formData.mobile" class="form-control" placeholder="Longitude">
+    </div>
+  </div> -->
+  <div class="form-group">
+    <button type="submit" [disabled]="form.invalid" class="btn btn-lg btn-block btn-info">Salvar</button>
+  </div>
+
+ 
+
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Temperatura</h5>
+
+           
+          <div class="badge badge-secondary">
+              <h1><span  class="badge badge-warning">{{service.formData.position}} C</span></h1>
+          </div>
+          
+           
+         </div>
+      </div>
+    </div>
+    <div class="col-sm-6">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Localizacao</h5>
+
+
+          <div class="badge badge-secondary">
+              <h1><span  class="badge badge-success">{{service.formData.empCode}}</span></h1>
+              <h1><span  class="badge badge-dark">{{service.formData.mobile}}</span></h1>
+          </div>
+
+          <a href="#" class="btn btn-primary">Mapa</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</form>
